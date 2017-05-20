@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.taniafontcuberta.basketball">
+
+<uses-permission android:name="android.permission.INTERNET" />
+
+<application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+
+    <activity
+        android:name="com.taniafontcuberta.basketball.controller.activities.login.LoginActivity"
+        android:label="@string/app_name">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity android:name="com.taniafontcuberta.basketball.controller.activities.main.MainActivity" />
+    <activity
+        android:name="com.taniafontcuberta.basketball.controller.activities.master_detail.AtletaListActivity"
+        android:label="@string/title_athlete_list"
+        android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.taniafontcuberta.basketball.controller.activities.main.MainActivity" />
+    </activity>
+    <activity
+        android:name="com.taniafontcuberta.basketball.controller.activities.master_detail.AtletaDetailActivity"
+        android:label="@string/title_athlete_detail"
+        android:parentActivityName="com.taniafontcuberta.basketball.controller.activities.master_detail.AtletaListActivity"
+        android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.taniafontcuberta.basketball.controller.activities.master_detail.AtletaListActivity" />
+    </activity>
+    <activity
+        android:name=".controller.activities.add_edit.AddEditActivity"
+        android:label="Añadir atleta"
+        android:parentActivityName=".controller.activities.master_detail.AtletaListActivity"
+        android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.taniafontcuberta.basketball.controller.activities.master_detail.AtletaListActivity" />
+
+    </activity>
+
+
+    <activity
+        android:name=".controller.activities.login.RegisterActivity"
+        android:label="Registrar usuario"
+        android:parentActivityName=".controller.activities.login.LoginActivity"
+        android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.taniafontcuberta.basketball.controller.activities.login.LoginActivity" />
+    </activity>
+
+
+
+</application>
+
+</manifest>
